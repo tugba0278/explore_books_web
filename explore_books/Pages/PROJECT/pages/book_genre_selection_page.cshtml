@@ -1,0 +1,105 @@
+﻿@page
+@using explore_books.Pages.PROJECT.sifre;
+@model bookGenreselectionModel
+
+<style>
+
+    body{
+        background-color: #6B78C0;
+    }
+
+    .genre-button{ 
+        margin-top:70px;
+        width: 300px; 
+        height:50px;
+        margin-bottom:50px;
+        background-color: #EFE7C9;
+        font-family:'Courier New';
+        font-size:25px;
+        font-weight:bold;
+        color:black;
+        border-radius: inherit;
+        border-style: hidden;     
+    }
+
+        .genre-button:hover {
+            background-color: #e74c3c; /* Hover durumunda  */
+        }
+
+    .submit-button {
+        font-family:'Courier New';
+        font-weight:bold;
+        font-size:20px;
+        width: 150px; /* İLERİ butonunun genişliği */
+        position: fixed;
+        right: 70px; /* Sağdan mesafe */
+        bottom: 110px; /* Alttan mesafe */
+        background-color:black;
+        border-radius:inherit;
+        border-style:hidden;
+    }
+        .submit-button:hover {
+            background-color: #e74c3c; /* Hover durumunda */
+        }
+        
+    h2{
+        margin-top:85px;
+        font-family:'Courier New';
+        font-weight: bold;
+        color:white;
+    }
+
+    .explore-text {
+        font-size: 50px;
+        font-family:'Courier New';
+        color:white;
+        position:fixed;
+        right:60px;
+        bottom:400px;
+
+    }
+
+    #selectedGenres {
+        font-size: 18px;
+        margin-top: 20px;
+    }
+
+    .genre-button.selected {
+        background-color: black; /* Tıklandığında değişecek arka plan rengi (örnek renk: kırmızı) */
+    }
+</style>
+
+<div class="container">
+    <h2>NE TÜR KİTAPLARDAN HOŞLANDIĞINIZI SEÇİNİZ..</h2>
+
+    <form method="post">
+        <div class="row">
+            @foreach (var genreGroup in Model.GroupedGenres)
+            {
+                <div class="col-md-4 ">
+                    <!-- Üçlü gruplar için col-md-4 kullanılır -->
+                    @foreach (var genre in genreGroup)
+                    {
+                        <button type="button" class="btn btn-primary genre-button mb-3" onclick="ToggleGenre('@genre')" >@genre</button>
+                    }
+                </div>
+            }
+        </div>
+
+        <div class="explore-text">
+            <div>KİTAPLARI</div>
+            <div>KEŞFET!</div>
+        </div>
+
+            <button type="submit" class="btn btn-success submit-button" style="width: 150px;">İLERİ</button>
+
+    </form>
+    <div id="selectedGenres"></div>
+</div>
+
+<script>
+    function ToggleGenre(genre) {
+        var genreButton = document.getElementById(genre);
+        genreButton.classList.toggle("selected");
+    }
+</script>
