@@ -1,22 +1,25 @@
-using explore_books;
+﻿using explore_books;
 using explore_books.Pages.PROJECT;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Hosting;
 using System.Configuration;
 using MySqlConnector;
 using Microsoft.AspNetCore.Mvc;
 
 var builder = WebApplication.CreateBuilder(args);
-builder.Services.AddDatabaseDeveloperPageExceptionFilter();
+builder.Services.AddMvc();
 builder.Services.AddDbContext<db>(options =>
-{
-    options.UseMySql("Server=192.168.213.242; Database=myDatabase; User=tuba; Password=29051453", ServerVersion.AutoDetect("Server=192.168.213.242; Database=myDatabase; User=tuba; Password=29051453"), null);
-});
+    options.UseMySql(builder.Configuration.GetConnectionString("DefaultConnection"),
+    new MySqlServerVersion(new Version(7, 0, 0)),
+    mysqlOptions => mysqlOptions.EnableRetryOnFailure())); // MySQL sunucunuzun versiyonuna göre ayarlayın
 var app = builder.Build();
 
 
 // Add services to the container.
 builder.Services.AddRazorPages();
-var firebaseConfig = builder.Configuration.GetSection("FirebaseConfig").Get<FirebaseConfig>();
+//var firebaseConfig = builder.Configuration.GetSection("FirebaseConfig").Get<FirebaseConfig>();
+
+
 
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())

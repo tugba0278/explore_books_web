@@ -21,6 +21,10 @@
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
+      "Id": "C:\\Users\\tugba\\source\\repos\\explore_books\\explore_books\\wwwroot\\images\\kitap-kapagi.png",
+      "PackagePath": "staticwebassets\\images\\kitap-kapagi.png"
+    },
+    {
       "Id": "C:\\Users\\tugba\\source\\repos\\explore_books\\explore_books\\wwwroot\\js\\bootstrap.min.js",
       "PackagePath": "staticwebassets\\js\\bootstrap.min.js"
     },

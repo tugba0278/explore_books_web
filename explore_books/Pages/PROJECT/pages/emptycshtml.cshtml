@@ -1,0 +1,40 @@
+﻿@page
+@model explore_books.Pages.PROJECT.pages.emptycshtmlModel
+@{
+    ViewData["Title"] = "Kitap Keşfetme Sayfası";
+}
+
+<!-- Üst Menü ve Arama Alanı -->
+<div class="upper-menu">
+    <form method="get">
+        <input type="text" name="searchQuery" placeholder="Kitap adı veya yazar adı giriniz" />
+        <select name="category">
+            <!-- Kategori seçenekleri burada yer alacak -->
+            @foreach (var category in Model.Categories)
+            {
+                <option value="@category.Value">@category.Text</option>
+            }
+        </select>
+        <select name="author">
+            <!-- Yazar seçenekleri burada yer alacak -->
+            @foreach (var author in Model.Authors)
+            {
+                <option value="@author.Value">@author.Text</option>
+            }
+        </select>
+        <button type="submit">Ara</button>
+    </form>
+</div>
+
+<!-- Kitap Listesi -->
+<div class="book-list">
+    @foreach (var book in Model.Books)
+    {
+        <div class="book-item">
+            <img src="~/images/kitap-kapagi.png" alt="@book.bookName" />
+            <h3>@book.bookName</h3>
+            <p>@book.author</p>
+            <!-- Diğer kitap bilgileri -->
+        </div>
+    }
+</div>

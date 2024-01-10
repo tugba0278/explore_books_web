@@ -11,14 +11,21 @@ namespace explore_books.Pages.PROJECT
 
         // Veritabanı tablolarınızı burada DbSet olarak tanımlayın
         public DbSet<Book> Books => Set<Book>();
+        public DbSet<Author> Authors => Set<Author>();
 
     }
     public class Book
     {
-        public int Id { get; set; } // Kitabın benzersiz tanımlayıcısı
-        public string Title { get; set; } // Kitabın adı
-        public string Author { get; set; } // Kitabın yazarı
-        public string ImageUrl { get; set; } // Kitabın resminin URL'si
+        public int bookId { get; set; } // Kitabın benzersiz tanımlayıcısı
+        public string bookName { get; set; } // Kitabın adı
+        public string author { get; set; } // Kitabın yazarı
+        public string bookImage { get; set; } // Kitabın resmi
+    }
+    public class Author
+    {
+        public int authorId { get; set; } // yazarın benzersiz tanımlayıcısı
+        public string authorName { get; set; } // yazarın adı
+        public string authorImage { get; set; } // yazarın resmi
     }
 
 }

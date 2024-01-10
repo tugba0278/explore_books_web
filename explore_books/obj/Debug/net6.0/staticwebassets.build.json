@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "XkUSq3avdBDM/r3MAbcUAb4iuExtcrHS31ognY/ymTw=",
+  "Hash": "MygzCqBBFzGq3qehJsz2J0CqqviPrbQ4IQ5990n6dVU=",
   "Source": "explore_books",
   "BasePath": "_content/explore_books",
   "Mode": "Default",
@@ -117,6 +117,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\favicon.ico"
+    },
+    {
+      "Identity": "C:\\Users\\tugba\\source\\repos\\explore_books\\explore_books\\wwwroot\\images\\kitap-kapagi.png",
+      "SourceId": "explore_books",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\tugba\\source\\repos\\explore_books\\explore_books\\wwwroot\\",
+      "BasePath": "_content/explore_books",
+      "RelativePath": "images/kitap-kapagi.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\kitap-kapagi.png"
     },
     {
       "Identity": "C:\\Users\\tugba\\source\\repos\\explore_books\\explore_books\\wwwroot\\js\\bootstrap.min.js",
