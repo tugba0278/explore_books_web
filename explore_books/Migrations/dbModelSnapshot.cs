@@ -60,6 +60,29 @@ namespace explore_books.Migrations
                     b.ToTable("Books");
                 });
 
+            modelBuilder.Entity("explore_books.Pages.PROJECT.GenreSelection", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    b.Property<string>("BookGenre")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("FirstName")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("LastName")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Genres");
+                });
+
             modelBuilder.Entity("explore_books.Pages.PROJECT.Request", b =>
                 {
                     b.Property<int>("Id")

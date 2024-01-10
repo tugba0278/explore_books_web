@@ -6,6 +6,11 @@
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Compile Remove="Migrations\20240110132153_genre.cs" />
+    <Compile Remove="Migrations\20240110132153_genre.Designer.cs" />
+  </ItemGroup>
+
 	<ItemGroup>
 		<PackageReference Include="FirebaseAuth" Version="2.0.6" />
 		<PackageReference Include="FirebaseAuthentication.net" Version="4.1.0" />
