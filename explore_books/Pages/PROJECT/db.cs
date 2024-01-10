@@ -10,9 +10,19 @@ namespace explore_books.Pages.PROJECT
         }
 
         // Veritabanı tablolarınızı burada DbSet olarak tanımlayın
+        public DbSet<Request> Requests => Set<Request>();
         public DbSet<Book> Books => Set<Book>();
         public DbSet<Author> Authors => Set<Author>();
 
+    }
+    public class Request
+    {
+        public int Id { get; set; } // Kitabın benzersiz tanımlayıcısı
+        public string FirstName { get; set; } 
+        public string LastName { get; set; } 
+        public string PhoneNumber { get; set; }
+        public string RegisterEmail { get; set; }
+        public string RegisterPassword { get; set; }
     }
     public class Book
     {

@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.Mvc;
 
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddMvc();
+builder.Services.AddRazorPages();
 builder.Services.AddDbContext<db>(options =>
     options.UseMySql(builder.Configuration.GetConnectionString("DefaultConnection"),
     new MySqlServerVersion(new Version(7, 0, 0)),
@@ -16,7 +17,6 @@ var app = builder.Build();
 
 
 // Add services to the container.
-builder.Services.AddRazorPages();
 //var firebaseConfig = builder.Configuration.GetSection("FirebaseConfig").Get<FirebaseConfig>();
 
 
